@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "860557248248",
+    "firebase_url": "https://myfirebase-a622b.firebaseio.com",
+    "project_id": "myfirebase-a622b",
+    "storage_bucket": "myfirebase-a622b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860557248248:android:42cb588275facade",
+        "android_client_info": {
+          "package_name": "com.auribises.myfirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860557248248-top28u2goo4pv04jbhohl0vo2qbeimgo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy3CAH9M76m-CA-ud81t7OJ6XbEINsKFc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
