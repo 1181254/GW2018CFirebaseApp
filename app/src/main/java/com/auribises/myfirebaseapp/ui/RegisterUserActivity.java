@@ -74,6 +74,10 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
 
     void saveUserInFirestore(){
 
+        String userId = auth.getCurrentUser().getUid();
+        //db.collection("users").document(userId).set(user); // To add or Update
+
+
         db.collection("users").add(user)
                 .addOnCompleteListener(this, new OnCompleteListener<DocumentReference>() {
                     @Override
@@ -109,6 +113,17 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
         });
     }
 
+    void deleteFromDB(){
+        String userId = auth.getCurrentUser().getUid();
+        db.collection("users").document(userId).delete()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+            }
+        });
+    }
+
 
     void fetchAllUsersFromFirestore(){
         users = new ArrayList<>();
@@ -118,6 +133,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
+                        //String docId = document.getId();
                         User user = document.toObject(User.class);
                         users.add(user);
                     }
@@ -125,9 +141,9 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
-        // Show the Fetched users on Recyclerview / ListView
-    }
+        // Show the Fetched users on RecyclerView / ListView
 
+    }
 
 
     void registerUserWithFirebase(){
